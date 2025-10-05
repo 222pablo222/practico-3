@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+    int suma = 0, N;
+    printf ("ingrese un numero:\n");
+    scanf ("%d", &N);
+    
+    if (N < 1) {
+        printf ("ingrese un numero postivo mayor\n");
+        return 0;
+    }
+    else {
+        N = (N * (N + 1)) / 2;
+    }
+    printf ("el resultado es :%d", N);
+    return 0;
+}
