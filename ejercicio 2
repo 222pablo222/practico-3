@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+    int suma = 0, N, i;
+    printf ("ingrese un numero:\n");
+    scanf ("%d", &N);
+    
+    if (N < 1) {
+        printf ("ingrese un numero postivo mayor\n");
+        return 0;
+    }
+    for (i = 1; i <= N; i++) {
+    if (i % 2 != 0) {
+        suma += i ;
+    }
+    }
+    printf ("la suma de numeros impares es: %d\n", suma);
+    return 0;
+    
+}
