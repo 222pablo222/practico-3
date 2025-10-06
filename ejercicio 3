@@ -12,7 +12,7 @@ int main () {
     for (i = 1; i <= N; i++) {
         suma += i * i;
     }
-    printf ("la suma de numeros impares es: %d\n", suma);
+    printf ("la suma de los cuadrados perfectos es: %d\n", suma);
     return 0;
     
 }
