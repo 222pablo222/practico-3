@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    double x;
+    double S = 0.0;
+    double term;    
+    int sign = 1;   
+
+    printf("Ingrese el valor de X: ");
+    if (scanf("%lf", &x) != 1) return 0;
+
+    printf("Ingrese el valor de n (>=1): ");
+    if (scanf("%d", &n) != 1 || n < 1) {
+        printf("n debe ser entero positivo.\n");
+        return 0;
+    }
+
+    term = x; 
+    for (i = 1; i <= n; i++) {
+        if (i > 1) {
+            term = term * x / i;
+        }
+        S += sign * term;
+        sign = -sign; 
+    }
+
+    printf("El valor de la serie (hasta n=%d) es: %.10f\n", n, S);
+    return 0;
+}
