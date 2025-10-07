@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    double x;
+    int n;
+
+    printf("Ingrese el valor de X: ");
+    if (scanf("%lf", &x) != 1) return 0;
+
+    printf("Ingrese el valor de n (debe ser impar y >=1): ");
+    if (scanf("%d", &n) != 1) return 0;
+
+    if (n < 1) {
+        printf("n debe ser >= 1.\n");
+        return 0;
+    }
+
+    if (n % 2 == 0) {
+        printf("Advertencia: n es par. Se usará el mayor impar <= n (n = %d -> %d).\n", n, n-1);
+        n = n - 1;
+        if (n < 1) n = 1;
+    }
+
+    double S = 0.0;
+    double term = x;   
+    int sign = 1;     
+
+    int maxk = (n - 1) / 2; 
+    for (int k = 0; k <= maxk; k++) {
+        S += sign * term;
+
+        if (k < maxk) {
+            // t_{k+1} = t_k * X^2 / ((2k+2)*(2k+3))
+            double denom1 = 2.0 * (k + 1);     
+            double denom2 = denom1 + 1.0;      
+            term = term * (x * x) / (denom1 * denom2);
+            sign = -sign; 
+        }
+    }
+
+    printf("Resultado S (hasta n = %d): %.12f\n", n, S);
+    return 0;
+}
