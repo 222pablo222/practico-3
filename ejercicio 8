@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>   
+
+int main() {
+    int n, i;
+    float x;
+    double S = 0.0, factorial;
+
+    printf("Ingrese el valor de X: ");
+    scanf("%f", &x);
+    printf("Ingrese el valor de n (cantidad de términos): ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        factorial = 1;
+        for (int j = 1; j <= i; j++) {
+            factorial *= j;
+        }
+
+        S += pow(x, i) / factorial;
+    }
+
+    printf("El resultado de la serie es: %.6lf\n", S);
+    return 0;
+}
