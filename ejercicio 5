@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    long long producto = 1;  
+
+    printf("Ingrese un numero entero positivo N: ");
+    scanf("%d", &N);
+
+    if (N < 1) {
+        printf("El numero debe ser mayor o igual a 1.\n");
+        return 0;
+    }
+
+    for (i = 1; i <= N; i++) {
+        producto *= i;  
+    }
+
+    printf("El producto de los primeros %d numeros enteros es: %lld\n", N, producto);
+
+    return 0;
+}
