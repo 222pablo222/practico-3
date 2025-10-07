@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, mcd, mcm;
+    int x, y, resto;
+
+    printf("Ingrese el primer número: ");
+    scanf("%d", &a);
+    printf("Ingrese el segundo número: ");
+    scanf("%d", &b);
+
+    x = a;
+    y = b;
+
+ 
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+
+    while (b != 0) {
+        resto = a % b;
+        a = b;
+        b = resto;
+    }
+    mcd = a;
+
+    mcm = (x * y) / mcd;
+
+    printf("El MCD es: %d\n", mcd);
+    printf("El MCM es: %d\n", mcm);
+
+    return 0;
+}
